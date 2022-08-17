@@ -51,7 +51,7 @@ const createManager = () => {
       },
       {
         type: "input",
-        name: "office number",
+        name: "officeNumber",
         message: "What is the manager office number? (Required)",
         validate: (officeNumberInput) => {
           if (officeNumberInput) {
@@ -61,16 +61,21 @@ const createManager = () => {
             return false;
           }
         },
-      },
+      }, 
     ])
-    .then((managerData) => {
+    .then(managerData => {
       const { name, id, email, officeNumber } = managerData;
       const manager = new Manager(name, id, email, officeNumber);
       teamArray.push(manager);
       console.log(manager);
+      createTeam();
     });
+
+    
 };
+
 const addIntern = () => {
+    console.log('dhsjakn');
   return inquirer
     .prompt([
       {
@@ -134,6 +139,7 @@ const addIntern = () => {
       createTeam();
     });
 };
+
 const addEngineer = () => {
   return inquirer
     .prompt([
@@ -191,8 +197,8 @@ const addEngineer = () => {
       },
     ])
     .then((engineerData) => {
-      const { name, id, email, officeNumber } = engineerData;
-      const engineer = new Engineer(name, id, email, userName);
+      const { name, id, email, username } = engineerData;
+      const engineer = new Engineer(name, id, email, username);
       teamArray.push(engineer);
       console.log(engineer);
       createTeam();
@@ -209,11 +215,11 @@ const createTeam = () => {
       }
     ])
     .then((addTeam) => {
-      if (addTeam.position == "manager"){
+      if (addTeam.positions == "Manager"){
         createManager();
-      } else if (addTeam.position == "Intern"){
+      } else if (addTeam.positions == "Intern"){
         addIntern();
-      } else if (addTeam.position == "Enigineer"){
+      } else if (addTeam.positions == "Engineer"){
         addEngineer();
       } else {
        return teamData;
@@ -227,6 +233,7 @@ fs.writeFile("./dist/index.html", data, err => {
     console.log(err);
     return;
   } else {
+      
     console.log("your Team Profile has been successfully created!");
   }
 })
@@ -234,3 +241,4 @@ fs.writeFile("./dist/index.html", data, err => {
 
 
 createManager();
+
