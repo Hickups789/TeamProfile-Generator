@@ -3,7 +3,7 @@ const fs = require("fs");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
-const generateHtml = require("./dist/generateHTML.js")
+const generateHTML = require("./src/generateHTML.js")
 const teamArray = [];
 
 const createManager = () => {
@@ -74,7 +74,6 @@ const createManager = () => {
 };
 
 const addIntern = () => {
-    console.log('dhsjakn');
   return inquirer
     .prompt([
       {
@@ -221,13 +220,13 @@ const createTeam = () => {
       } else if (addTeam.positions == "Engineer"){
         addEngineer();
       } else {
-       return teamData;
+       teamData()
       }
     })
 };
 
-const teamData = data => {
-fs.writeFile("./dist/index.html", data, err => {
+const teamData = () => {
+fs.writeFile("./dist/index.html", generateHTML(teamArray), err => {
   if (err) {
     console.log(err);
     return;

@@ -53,4 +53,66 @@ const generateEngineer = function (engineer) {
     </div>
 </div>
     `
+};
+
+const generateCards = (team)=> {
+    console.log("in the generateCards")
+    let cards = ""
+    for (let i = 0; i < team.length; i++) {
+        if(team[i].getRole() === "Manager"){
+            cards += generateManager(team[i])
+        }else if(team[i].getRole() === "Intern"){
+            cards += generateIntern(team[i])
+        }else if(team[i].getRole() === "Engineer"){
+            cards += generateEngineer(team[i])
+        }
+
+        
+       
+      }
+    return cards
 }
+
+const generateTeam = (teamArray) => {
+    return`
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Profile Generator</title>
+    <link rel="stylesheet" href="../dist/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" id="navbar">
+        <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar text"
+          >Team Profiles</span
+        >
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <div class="row justify-content-center" id="team-cards">
+          ${generateCards(teamArray)}
+        </div>
+      </div>
+    </main>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"
+  ></script>
+</html>
+    `
+};
+
+
+module.exports = generateTeam
