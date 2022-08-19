@@ -16,4 +16,10 @@ In this assignment Ive created a generates a team profiles for employees using n
 
 ## Recorded Video reference
 
-https://drive.google.com/file/d/1yPg3DHpciY4YzlT0EcQYVLqN-T8rCawU/view
+<iframe src="https://drive.google.com/file/d/1yPg3DHpciY4YzlT0EcQYVLqN-T8rCawU/preview" width="640" height="480"></iframe>
+
+## URL links
+
+[link](https://github.com/Hickups789/TeamProfile-Generator.git)
+
+[link](https://hickups789.github.io/TeamProfile-Generator/)
