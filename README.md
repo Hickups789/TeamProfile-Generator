@@ -20,6 +20,6 @@ In this assignment Ive created a generates a team profiles for employees using n
 
 ## URL links
 
-[link](https://github.com/Hickups789/TeamProfile-Generator.git)
+[github](https://github.com/Hickups789/TeamProfile-Generator.git)
 
-[link](https://hickups789.github.io/TeamProfile-Generator/)
+[url](https://hickups789.github.io/TeamProfile-Generator/)
