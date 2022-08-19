@@ -16,7 +16,8 @@ In this assignment Ive created a generates a team profiles for employees using n
 
 ## Recorded Video reference
 
-<iframe src="https://drive.google.com/file/d/1yPg3DHpciY4YzlT0EcQYVLqN-T8rCawU/preview" width="640" height="480"></iframe>
+[video reference](https://drive.google.com/file/d/1yPg3DHpciY4YzlT0EcQYVLqN-T8rCawU/view)
+
 
 ## URL links
 
